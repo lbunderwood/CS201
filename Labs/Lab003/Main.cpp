@@ -16,7 +16,7 @@ int main()
 
 	//--------------------------|Part 1|------------------------------
 	//counts from 1-20. prints each number and moves to the next line
-	while(count<=20)
+	while (count <= 20)
 	{
 		std::cout << count << std::endl;
 		count++;
@@ -25,7 +25,7 @@ int main()
 
 	//--------------------------|Part 2|------------------------------
 	//counts rows
-	while(row < 10)
+	while (row < 10)
 	{
 		//counts columns
 		while (column < 60)
