@@ -14,6 +14,7 @@ int main()
 	int row = 0;
 	int column = 0;
 
+	//--------------------------|Part 1|------------------------------
 	//counts from 1-20. prints each number and moves to the next line
 	while(count<=20)
 	{
@@ -21,17 +22,46 @@ int main()
 		count++;
 	}
 
+
+	//--------------------------|Part 2|------------------------------
 	//counts rows
 	while(row < 10)
 	{
 		//counts columns
 		while (column < 60)
 		{
+			//adds a hash and moves to the next column
 			std::cout << "#";
 			column++;
 		}
+
+		//moves to next line and resets column counter
 		std::cout << std::endl;
 		row++;
+		column = 0;
+	}
+
+	//sets up for part 3
+	row = 0;
+	column = 0;
+	std::cout << std::endl;
+
+	//--------------------------|Part 3|------------------------------
+	//counts rows
+	while (row < 10)
+	{
+		//counts columns
+		while (column < 30)
+		{
+			//adds a hash and moves to the next column
+			std::cout << "|#";
+			column++;
+		}
+
+		//moves to next line and resets column counter
+		std::cout << std::endl;
+		row++;
+		column = 0;
 	}
 	return 0;
 }
