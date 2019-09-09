@@ -22,6 +22,8 @@ int main()
 		count++;
 	}
 
+	//add an extra line to make things look nice
+	std::cout << std::endl;
 
 	//--------------------------|Part 2|------------------------------
 	//counts rows
@@ -57,11 +59,23 @@ int main()
 			std::cout << "|#";
 			column++;
 		}
-
-		//moves to next line and resets column counter
-		std::cout << std::endl;
+		//sets up for next row
 		row++;
 		column = 0;
+		std::cout << std::endl;
+
+		//switches order of |# to #| for next row
+		while (column < 30)
+		{
+			//adds a hash and moves to the next column
+			std::cout << "#|";
+			column++;
+		}
+		//sets up for next row
+		row++;
+		column = 0;
+		std::cout << std::endl;
+		
 	}
 	return 0;
 }
