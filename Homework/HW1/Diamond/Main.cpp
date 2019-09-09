@@ -14,40 +14,55 @@ int main()
 	int countS;	//counts spaces in for loop
 	int countH;	//counts hashes in for loop
 
-	std::cout << "Please enter an integer to determine your diamond's size" << std::endl;
+	std::cout << "Please enter an integer to determine your diamond's size" 
+			  << std::endl;
 	std::cin >> input;
-	lines = (2 * input) - 2;	//bases number of lines tall the diamond will be on number of #'s wide (starting from 0)
+	//bases number of lines tall the diamond will be on user input
+	lines = (2 * input) - 2;	
 
-
-	if (input >= 1)										//Checks for valid input. Not sure why this works for characters, but it does
-	{
-		for (countL = 0; countL <= lines; countL++)		//This for loop iterates once per line of the diamond
+	//Checks for valid input. Not sure why this works for characters, but it does
+	if (input >= 1)										
+	{	
+		//This for loop iterates once per line of the diamond
+		for (countL = 0; countL <= lines; countL++)		
 		{
-			if (countL < input)							//Checks if we are on the waxing or waning half of the diamond
+			//Checks if we are on the waxing or waning half of the diamond
+			if (countL < input)							
 			{ 
-					//-------------------------------------------------WAXING HALF-----------------------------------------------------------//
-
-				for (countS = 0; countS <= input - (countL + 2); countS++)	//prints a number of spaces before the hashes begin
+				//-------------------------WAXING HALF-----------------------//
+				
+				//prints a number of spaces before the hashes begin
+				for (countS = 0; countS <= input - (countL + 2); countS++)	
 					std::cout << " ";
-				for (countH = 0; countH <= countL * 2; countH++)			//prints the appropriate number of hashes for the current line
+				
+				//prints the appropriate number of hashes for the current line
+				for (countH = 0; countH <= countL * 2; countH++)			
 					std::cout << "#";
-				std::cout << std::endl;										//moves on to the next line
+				
+				//moves on to the next line
+				std::cout << std::endl;										
 			}
 			else 
 			{ 
-					//-------------------------------------------------WANING HALF------------------------------------------------------------//
-
-				for (countS = 0; countS <= countL - input; countS++)		//prints a number of spaces before the hashes begin
+				//------------------------WANING HALF------------------------//
+				
+				//prints a number of spaces before the hashes begin
+				for (countS = 0; countS <= countL - input; countS++)		
 					std::cout << " ";
-				for (countH = 0; countH <= (lines - countL) * 2; countH++)	//prints the appropriate number of hashes for the current line
+				
+				//prints the appropriate number of hashes for the current line
+				for (countH = 0; countH <= (lines - countL) * 2; countH++)	
 					std::cout << "#";
-				std::cout << std::endl;										//moves on to the next line
+				
+				//moves on to the next line
+				std::cout << std::endl;										
 			}
 		}
 	}
 	else		//Error message for invalid input
 	{
-		std::cout << "ERROR: PLEASE RESTART THE PROGRAM AND ENTER AN INTEGER GREATER THAN 0";
+		std::cout << "ERROR: PLEASE RESTART THE PROGRAM AND "
+				  << "ENTER AN INTEGER GREATER THAN 0";
 	}
 
 	return 0;

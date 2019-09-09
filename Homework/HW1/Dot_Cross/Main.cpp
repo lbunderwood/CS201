@@ -45,9 +45,15 @@ int main()
 	//Set decimal places to 5
 	std::cout << std::setprecision(5);
 
-	//output the products
-	std::cout << "< " << x1input << ", " << y1input << ", " << z1input << " > o < " << x2input << ", " << y2input << ", " << z2input << " > = " << dot << std::endl;
-	std::cout << "< " << x1input << ", " << y1input << ", " << z1input << " > X < " << x2input << ", " << y2input << ", " << z2input << " > = < " << xcross << ", " << ycross << ", " << zcross << " >";
+			  //output the dot product
+	std::cout << "< " << x1input << ", " << y1input << ", " << z1input
+			  << " > o < " << x2input << ", " << y2input << ", " << z2input
+			  << " > = " << dot << std::endl
+			  //output the cross product
+			  << "< " << x1input << ", " << y1input << ", " << z1input 
+			  << " > X < " << x2input << ", " << y2input << ", " << z2input
+			  << " > = < " << xcross << ", " << ycross << ", " << zcross
+			  << " >";
 
 	return 0;
 }
