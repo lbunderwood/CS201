@@ -2,7 +2,7 @@
 Luke Underwood
 9/13/19
 Lab005
-
+Prints some top-tier art based on your decision
 */
 
 #include<iostream>
