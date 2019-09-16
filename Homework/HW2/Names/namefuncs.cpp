@@ -1,17 +1,17 @@
 #include<iostream>
-#include<vector>;
-#include<string>;
-#include<algorithm>;
+#include<vector>
+#include<string>
+#include<algorithm>
+#include"nameheader.h"
 
 //takes the input from the user
 void inputNames(std::vector<std::string> & names)
 {
 	int i = 0;
-	std::vector<std::string> names;
 	for (i = 0; i < 10; i++)
 	{
 		std::string name;
-		std::cout << "Please enter name " << i;
+		std::cout << "Please enter name " << i << std::endl;
 		std::getline(std::cin, name);
 		names.push_back(name);
 	}
@@ -24,9 +24,14 @@ void searchNames()
 }
 
 //prints the names
-void printNames()
+void printNames(std::vector<std::string> & names)
 {
-	
+	int i = 0;
+
+	for (i = 0; i < 10; i++)
+	{
+		std::cout << names[i] << std::endl;
+	}
 }
 
 //sorts the names alphabetically

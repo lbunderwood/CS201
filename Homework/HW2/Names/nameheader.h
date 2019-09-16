@@ -11,13 +11,13 @@ holds prototypes of functions
 #define NAMEFUNCS_H
 
 //takes the input from the user
-void inputNames();
+void inputNames(std::vector<std::string>& names);
 
 //searches the names
 void searchNames();
 
 //prints the names
-void printNames();
+void printNames(std::vector<std::string>& names);
 
 //sorts the names alphabetically
 void sortNames();

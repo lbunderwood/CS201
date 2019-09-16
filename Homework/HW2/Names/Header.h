@@ -1,7 +1,8 @@
 /*
 Luke Underwood
 9/16/19
-namefuncs.h
+nameheader.h
+holds prototypes of functions
 */
 
 #pragma once
@@ -9,3 +10,16 @@ namefuncs.h
 #ifndef NAMEFUNCS_H
 #define NAMEFUNCS_H
 
+//takes the input from the user
+void inputNames(std::vector<std::string>& names);
+
+//searches the names
+void searchNames();
+
+//prints the names
+void printNames(std::vector<std::string>& names);
+
+//sorts the names alphabetically
+void sortNames();
+
+#endif
