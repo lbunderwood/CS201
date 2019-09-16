@@ -11,7 +11,7 @@ void inputNames(std::vector<std::string> & names)
 	for (i = 0; i < 10; i++)
 	{
 		std::string name;
-		std::cout << "Please enter name " << i << std::endl;
+		std::cout << "Please enter name " << i+1 << std::endl;
 		std::getline(std::cin, name);
 		names.push_back(name);
 	}
