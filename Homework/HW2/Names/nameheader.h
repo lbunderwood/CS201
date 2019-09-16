@@ -19,7 +19,7 @@ void searchNames();
 //prints the names
 void printNames();
 
-//[[[[[[[[[[TBD]]]]]]]]]]]
-void placeholderName();
+//sorts the names alphabetically
+void sortNames();
 
 #endif
