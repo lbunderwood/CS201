@@ -17,11 +17,17 @@ using std::endl;
 void stringInput()
 {
 	string input;
+	int counter = 0;
 	cout << "Please input a word\n";
 	cin >> input;
 
 	cout << "Your word: " << input << endl;
-	cout << "Your word is " << input.size() << " letters long.";
+	cout << "Your word is ";
+	for (counter = 0; counter < input.size(); counter++)
+	{
+		cout << "#";
+	}
+	cout << " letters long";
 }
 
 int main()
