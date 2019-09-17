@@ -14,6 +14,7 @@ Uses functions to collect names from user and do a number of things with them
 int main()
 {
 	int menuchoice = 0;
+	std::string search;
 	std::vector<std::string> names;
 	inputNames(names);
 	while (menuchoice != 5)
@@ -32,13 +33,15 @@ int main()
 			inputNames(names);
 			break;
 		case 2:
-			searchNames();
+			std::cout << "Please enter the name you would like to search for\n";
+			std::getline(std::cin, search);
+			searchNames(names, search);
 			break;
 		case 3:
 			printNames(names);
 			break;
 		case 4:
-			sortNames();
+			sortNames(names);
 			break;
 		case 5:
 			break;

@@ -14,12 +14,12 @@ holds prototypes of functions
 void inputNames(std::vector<std::string>& names);
 
 //searches the names
-void searchNames();
+void searchNames(std::vector<std::string>& names, std::string search);
 
 //prints the names
 void printNames(std::vector<std::string>& names);
 
 //sorts the names alphabetically
-void sortNames();
+void sortNames(std::vector<std::string>& names);
 
 #endif
