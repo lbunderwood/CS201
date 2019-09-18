@@ -12,19 +12,28 @@ Uses functions in other files to collect data and print them
 int main()
 {
 	int i = 0;
+	int j = 0;
 	std::vector<int> num;
+	int totalnum = 0;
 
-	for (i = 0; i < 3; i++)
+	while (true)
 	{
 		std::cout << "Please input an integer.\n";
 		num.push_back(getInt());
+		if (num[i] == 0)
+		{
+			break;
+		}
+			
+		i++;
 	}
 
-	for (i = 0; i < 3; i++) 
+	for (j = 0; j <= i; j++) 
 	{
-		putInt(num[i], 10);
-		std::cout << std::endl;
+		totalnum = totalnum + num[j];
 	}
+
+	putInt(totalnum, 10);
 	
 	return 0;
 }
