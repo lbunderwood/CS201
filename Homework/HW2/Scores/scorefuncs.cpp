@@ -13,7 +13,7 @@ Holds function definitions
 //takes the input from the user
 void inputScores(std::vector<std::string>& names, std::vector<int>& scores)
 {
-	int i = 0;
+	int i = names.size();
 	std::string name;
 	int score = 0;
 	
