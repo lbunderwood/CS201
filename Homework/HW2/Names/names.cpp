@@ -58,8 +58,6 @@ int main()
 		case 5:
 			break;
 		}
-
-
 	}
 
 	return 0;

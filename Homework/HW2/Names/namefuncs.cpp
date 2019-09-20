@@ -8,7 +8,10 @@
 void inputNames(std::vector<std::string> & names)
 {
 	int i = 0;
+	
+	//clears out existing names so we can start fresh
 	names.clear();
+	
 	for (i = 0; i < 10; i++)
 	{
 		std::string name;
