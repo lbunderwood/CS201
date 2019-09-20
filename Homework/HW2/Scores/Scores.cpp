@@ -15,9 +15,10 @@ int main()
 {
 	//initializes variables
 	int menuchoice = 0;
-	std::string search;
+	std::string searchs;
+	int searchi = 0;
 	std::vector<std::string> names;
-	std::vector<std::string> scores;
+	std::vector<int> scores;
 
 	//collects names to get things started
 	inputScores(names, scores);
@@ -45,8 +46,8 @@ int main()
 			break;
 		case 3:
 			std::cout << "Please enter the name you would like to search for\n";
-			std::cin >> search;
-			if (searchNames(names, search))
+			std::cin >> searchs;
+			if (searchNames(names, searchs))
 			{
 				std::cout << "That name is on file!\n";
 			}
@@ -57,8 +58,8 @@ int main()
 		
 		case 4:
 			std::cout << "Please enter the score you would like to search for\n";
-			std::cin >> search;
-			if (searchNames(scores, search))
+			std::cin >> searchi;
+			if (searchScores(scores, searchi))
 			{
 				std::cout << "That score is on file!\n";
 			}

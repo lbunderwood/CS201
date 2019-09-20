@@ -11,15 +11,15 @@ holds prototypes of functions
 #define NAMEFUNCS_H
 
 //takes the input from the user
-void inputScores(std::vector<std::string>& names, std::vector<std::string>& scores);
+void inputScores(std::vector<std::string>& names, std::vector<int>& scores);
 
 //prints the names
-void printScores(std::vector<std::string>& names, std::vector<std::string>& scores);
+void printScores(std::vector<std::string>& names, std::vector<int>& scores);
 
 //searches the names
 bool searchNames(std::vector<std::string>& names, std::string search);
 
 //searches the scores
-bool searchScores(std::vector<std::string>& scores, std::string search);
+bool searchScores(std::vector<int>& scores, int search);
 
 #endif

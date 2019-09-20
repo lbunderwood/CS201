@@ -11,30 +11,42 @@ Holds function definitions
 #include"scoreheader.h"
 
 //takes the input from the user
-void inputScores(std::vector<std::string>& names, std::vector<std::string>& scores)
+void inputScores(std::vector<std::string>& names, std::vector<int>& scores)
 {
 	int i = 0;
-
-	//clears out existing names so we can start fresh
-	names.clear();
-
-	for (i = 0; i < 10; i++)
+	std::string name;
+	int score = 0;
+	
+	while (true)
 	{
-		std::string name;
 		std::cout << "Please enter name " << i + 1 << std::endl;
 		std::cin >> name;
 		names.push_back(name);
+		std::cout << "Please enter score " << i + 1 << std::endl;
+		std::cin >> score;
+		scores.push_back(score);
+		if (names[i] == "NoName" && scores[i] == 0)
+		{
+			names.erase(names.end() - 1);
+			scores.erase(scores.end() - 1);
+			break;
+		}
+		i++;
 	}
 }
 
 //prints the names
-void printScores(std::vector<std::string>& names, std::vector<std::string>& scores)
+void printScores(std::vector<std::string>& names, std::vector<int>& scores)
 {
 	int i = 0;
+	int j = 0;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < names.size(); i++)
 	{
-		std::cout << names[i] << std::endl;
+		std::cout << names[i];
+		for (j = 0; j < 15 - names[i].size(); j++)
+			std::cout << " ";
+		std::cout << scores[i] << std::endl;
 	}
 }
 
@@ -55,7 +67,7 @@ bool searchNames(std::vector<std::string>& names, std::string search)
 }
 
 //searches the scores
-bool searchScores(std::vector<std::string>& scores, std::string search)
+bool searchScores(std::vector<int>& scores, int search)
 {
 	int i = 0;
 	bool exists = false;
