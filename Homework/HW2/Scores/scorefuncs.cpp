@@ -56,7 +56,7 @@ bool searchNames(std::vector<std::string>& names, std::string search)
 	int i = 0;
 	bool exists = false;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < names.size(); i++)
 	{
 		if (names[i] == search)
 		{
@@ -72,7 +72,7 @@ bool searchScores(std::vector<int>& scores, int search)
 	int i = 0;
 	bool exists = false;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < scores.size(); i++)
 	{
 		if (scores[i] == search)
 		{
