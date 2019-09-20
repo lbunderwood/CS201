@@ -2,8 +2,8 @@
 Luke Underwood
 9/20/19
 Scores.cpp
-Stores pairs of names and scores as vectors and allows the user to search them,
-print them, or add new ones.
+Stores pairs of names and scores as vectors and allows the user to 
+search them, print them, or add new ones.
 */
 
 #include<iostream>
@@ -41,40 +41,53 @@ int main()
 		//executes a different function for each menu option
 		switch (menuchoice)
 		{
-		case 1:
+		case 1:		//collects user input
 			inputScores(names, scores);
 			break;
-		case 2:
+
+		case 2:		//prints all of the scores
 			printScores(names, scores);
 			break;
-		case 3:
-			std::cout << "Please enter the name you would like to search for\n";
+
+		case 3:		//searches for a name
+			//I had to choose between redundant code here vs. inside of 
+			//inputScores, where searchNames is also used, and since 
+			//inputScores is already pretty cluttered I put it here
+
+			std::cout << "Please enter the name you would like to "
+				<< "search for\n";
 			std::cin >> searchs;
+
+			//searchNames returns true if the name exists
 			if (searchNames(names, searchs, searchi))
 			{
 				std::cout << names[searchi];
 				for (int j = 0; j < 15 - names[searchi].size(); j++)
 					std::cout << " ";
 				std::cout << scores[searchi] << std::endl;
-			}
-			else {
-				std::cout << "That score is not on file\n";
+			} else {
+				std::cout << "That name is not on file\n";
 			}
 			break;
-		case 4:
-			std::cout << "Please enter the score you would like to search for\n";
+
+		case 4:		//searches for a score
+
+			std::cout << "Please enter the score you would like to "
+				<< "search for\n";
 			std::cin >> searchi;
+
+			//searchScores returns true if the name exists
 			if (searchScores(scores, searchi))
 			{
 				std::cout << names[searchi];
 				for (int j = 0; j < 15 - names[searchi].size(); j++)
 					std::cout << " ";
 				std::cout << scores[searchi] << std::endl;
-			}
-			else {
+			} else {
 				std::cout << "That score is not on file\n";
 			}
 			break;
+
 		case 5:
 			break;
 		}
