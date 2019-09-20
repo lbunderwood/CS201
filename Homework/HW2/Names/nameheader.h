@@ -19,7 +19,7 @@ bool searchNames(std::vector<std::string>& names, std::string search);
 //prints the names
 void printNames(std::vector<std::string>& names);
 
-//sorts the names alphabetically
+//Prints the number of characters in each string, then the total number
 void charNum(std::vector<std::string>& names);
 
 #endif

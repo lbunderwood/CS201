@@ -13,13 +13,18 @@ Uses functions to collect names from user and do a number of things with them
 
 int main()
 {
+	//initializes variables
 	int menuchoice = 0;
 	std::string search;
 	std::vector<std::string> names;
 
+	//collects names to get things started
 	inputNames(names);
+
+	//will end the program if the user inputs a 5
 	while (menuchoice != 5)
 	{
+		//prints a little menu
 		std::cout << "Please enter a number to choose an option\n"
 			<< "	1. Enter new names\n"
 			<< "	2. Check if a name is in the list\n"
@@ -28,6 +33,7 @@ int main()
 			<< "	5. Exit the program\n";
 		std::cin >> menuchoice;
 
+		//executes a different function for each menu option
 		switch (menuchoice)
 		{
 		case 1:
@@ -55,8 +61,6 @@ int main()
 
 
 	}
-
-
 
 	return 0;
 }
