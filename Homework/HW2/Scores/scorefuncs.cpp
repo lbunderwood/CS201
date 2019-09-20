@@ -21,10 +21,18 @@ void inputScores(std::vector<std::string>& names, std::vector<int>& scores)
 	{
 		std::cout << "Please enter name " << i + 1 << std::endl;
 		std::cin >> name;
-		names.push_back(name);
+		if (searchNames(names, name))
+		{
+			std::cout << "That name is taken! Please try again.\n";
+			break;
+		} else {
+			names.push_back(name);
+		}
+
 		std::cout << "Please enter score " << i + 1 << std::endl;
 		std::cin >> score;
 		scores.push_back(score);
+
 		if (names[i] == "NoName" && scores[i] == 0)
 		{
 			names.erase(names.end() - 1);
