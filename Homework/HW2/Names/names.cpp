@@ -16,6 +16,7 @@ int main()
 	int menuchoice = 0;
 	std::string search;
 	std::vector<std::string> names;
+
 	inputNames(names);
 	while (menuchoice != 5)
 	{
@@ -34,8 +35,13 @@ int main()
 			break;
 		case 2:
 			std::cout << "Please enter the name you would like to search for\n";
-			std::getline(std::cin, search);
-			searchNames(names, search);
+			std::cin >> search;
+			if (searchNames(names, search))
+			{
+				std::cout << "That name is on file!\n";
+			} else {
+				std::cout << "That name is not on file\n";
+			}
 			break;
 		case 3:
 			printNames(names);

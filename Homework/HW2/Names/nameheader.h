@@ -14,7 +14,7 @@ holds prototypes of functions
 void inputNames(std::vector<std::string>& names);
 
 //searches the names
-void searchNames(std::vector<std::string>& names, std::string search);
+bool searchNames(std::vector<std::string>& names, std::string search);
 
 //prints the names
 void printNames(std::vector<std::string>& names);
