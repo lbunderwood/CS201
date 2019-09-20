@@ -17,9 +17,9 @@ void inputScores(std::vector<std::string>& names, std::vector<int>& scores);
 void printScores(std::vector<std::string>& names, std::vector<int>& scores);
 
 //searches the names
-bool searchNames(std::vector<std::string>& names, std::string search);
+bool searchNames(std::vector<std::string>& names, std::string searchs, int& searchi);
 
 //searches the scores
-bool searchScores(std::vector<int>& scores, int search);
+bool searchScores(std::vector<int>& scores, int& search);
 
 #endif

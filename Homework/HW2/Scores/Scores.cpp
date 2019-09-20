@@ -20,15 +20,18 @@ int main()
 	std::vector<std::string> names;
 	std::vector<int> scores;
 
-	//collects names to get things started
+	//collects data to get things started
 	inputScores(names, scores);
+
+	//Reads back input
+	printScores(names, scores);
 
 	//will end the program if the user inputs a 5
 	while (menuchoice != 5)
 	{
 		//prints a little menu
 		std::cout << "Please enter a number to choose an option\n"
-			<< "	1. Enter new scores\n"
+			<< "	1. Add scores\n"
 			<< "	2. Print all of the names and scores\n"
 			<< "	3. Search for a name\n"
 			<< "	4. Search for a score\n"
@@ -47,21 +50,26 @@ int main()
 		case 3:
 			std::cout << "Please enter the name you would like to search for\n";
 			std::cin >> searchs;
-			if (searchNames(names, searchs))
+			if (searchNames(names, searchs, searchi))
 			{
-				std::cout << "That name is on file!\n";
+				std::cout << names[searchi];
+				for (int j = 0; j < 15 - names[searchi].size(); j++)
+					std::cout << " ";
+				std::cout << scores[searchi] << std::endl;
 			}
 			else {
-				std::cout << "That name is not on file\n";
+				std::cout << "That score is not on file\n";
 			}
 			break;
-		
 		case 4:
 			std::cout << "Please enter the score you would like to search for\n";
 			std::cin >> searchi;
 			if (searchScores(scores, searchi))
 			{
-				std::cout << "That score is on file!\n";
+				std::cout << names[searchi];
+				for (int j = 0; j < 15 - names[searchi].size(); j++)
+					std::cout << " ";
+				std::cout << scores[searchi] << std::endl;
 			}
 			else {
 				std::cout << "That score is not on file\n";

@@ -17,11 +17,12 @@ void inputScores(std::vector<std::string>& names, std::vector<int>& scores)
 	std::string name;
 	int score = 0;
 	
+	std::cout << "Enter NoName, then 0 to conclude input.\n";
 	while (true)
 	{
 		std::cout << "Please enter name " << i + 1 << std::endl;
 		std::cin >> name;
-		if (searchNames(names, name))
+		if (searchNames(names, name, i))
 		{
 			std::cout << "That name is taken! Please try again.\n";
 			break;
@@ -46,46 +47,39 @@ void inputScores(std::vector<std::string>& names, std::vector<int>& scores)
 //prints the names
 void printScores(std::vector<std::string>& names, std::vector<int>& scores)
 {
-	int i = 0;
-	int j = 0;
-
-	for (i = 0; i < names.size(); i++)
+	for (int i = 0; i < names.size(); i++)
 	{
 		std::cout << names[i];
-		for (j = 0; j < 15 - names[i].size(); j++)
+		for (int j = 0; j < 15 - names[i].size(); j++)
 			std::cout << " ";
 		std::cout << scores[i] << std::endl;
 	}
 }
 
 //searches the names
-bool searchNames(std::vector<std::string>& names, std::string search)
+bool searchNames(std::vector<std::string>& names, std::string searchs, int& searchi)
 {
-	int i = 0;
-	bool exists = false;
-
-	for (i = 0; i < names.size(); i++)
+	for (int i = 0; i < names.size(); i++)
 	{
-		if (names[i] == search)
+		if (names[i] == searchs)
 		{
-			exists = true;
+			searchi = i;
+			return true;
 		}
 	}
-	return exists;
+	return false;
 }
 
 //searches the scores
-bool searchScores(std::vector<int>& scores, int search)
+bool searchScores(std::vector<int>& scores, int& search)
 {
-	int i = 0;
-	bool exists = false;
-
-	for (i = 0; i < scores.size(); i++)
+	for (int i = 0; i < scores.size(); i++)
 	{
 		if (scores[i] == search)
 		{
-			exists = true;
+			search = i;
+			return true;
 		}
 	}
-	return exists;
+	return false;
 }
