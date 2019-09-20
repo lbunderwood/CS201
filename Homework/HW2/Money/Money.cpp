@@ -20,8 +20,6 @@ int main()
 	int dollarcoin = 0;
 	float cents = 0;
 	float dollars = 0;
-	int digits = 0;
-	int dollarsdigits = 0;
 
 	//collect input
 	std::cout << "How many pennies do you have?\n";
