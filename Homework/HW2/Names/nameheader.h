@@ -20,6 +20,6 @@ bool searchNames(std::vector<std::string>& names, std::string search);
 void printNames(std::vector<std::string>& names);
 
 //sorts the names alphabetically
-void sortNames(std::vector<std::string>& names);
+void charNum(std::vector<std::string>& names);
 
 #endif
