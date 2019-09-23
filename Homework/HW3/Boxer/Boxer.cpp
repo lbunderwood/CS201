@@ -20,3 +20,18 @@ Uses functions to print some text in a box of a defined size
 
 #include"Boxer.h"
 
+int main()
+{
+	std::string message;
+	int num = 0;
+
+	std::cout << "Please enter a string: ";
+	std::cin >> message;
+
+	std::cout << "Please enter an integer: ";
+	std::cin >> num;
+
+	boxPrint(message, num);
+
+	return 0;
+}
