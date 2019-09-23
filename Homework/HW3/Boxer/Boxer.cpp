@@ -25,13 +25,29 @@ int main()
 	std::string message;
 	int num = 0;
 
-	std::cout << "Please enter a string: ";
-	std::cin >> message;
+	while(true)
+	{
+		std::cout << "Enter exit, then 0 to end the program\n"
+				  << "Please enter a string: ";
+		getline(std::cin, message);
 
-	std::cout << "Please enter an integer: ";
-	std::cin >> num;
+		std::cout << "Please enter an integer: ";
+		std::cin >> num;
 
-	boxPrint(message, num);
+		if(message == "exit" && num == 0)
+		{
+			break;
+		} 
+		else if (num <= 0)
+		{
+			std::cout << "Please enter a positive number!\n";
+		}
+		else
+		{
+			boxPrint(message, num);
+		}
+
+	}
 
 	return 0;
 }
