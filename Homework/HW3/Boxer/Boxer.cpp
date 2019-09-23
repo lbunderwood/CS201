@@ -22,11 +22,13 @@ Uses functions to print some text in a box of a defined size
 
 int main()
 {
+	//initialize variables
 	std::string message;
 	int num = 0;
 
 	while(true)
 	{
+		//prints prompts, collects info
 		std::cout << "Enter exit, then 0 to end the program\n"
 				  << "Please enter a string: ";
 		getline(std::cin, message);
@@ -34,6 +36,7 @@ int main()
 		std::cout << "Please enter an integer: ";
 		std::cin >> num;
 
+		//error handling and exit condition
 		if(message == "exit" && num == 0)
 		{
 			break;
@@ -44,7 +47,7 @@ int main()
 		}
 		else
 		{
-			boxPrint(message, num);
+			boxPrint(message, num); //actually prints the box
 		}
 
 	}

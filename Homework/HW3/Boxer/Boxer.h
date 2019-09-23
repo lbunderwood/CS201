@@ -2,7 +2,7 @@
 Luke Underwood
 9/23/19
 BoxPrint.cpp
-Contains function boxPrint for Boxer.cpp
+Contains function prototype functions for Boxer.cpp
 
 -----------------------------------------------
 ****Lie la lie, lie la la la lie lie

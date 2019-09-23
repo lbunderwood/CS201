@@ -2,7 +2,7 @@
 Luke Underwood
 9/23/19
 BoxPrint.cpp
-Contains function boxPrint for Boxer.cpp
+Contains function definitions for Boxer.cpp
 
 -----------------------------------------------
 ****When I left my home and my family
@@ -29,8 +29,11 @@ void boxPrint(std::string message, int layers)
 	int countc = 1;								   //counter for columns
 	int countr = 1;								   //counter for rows
 
+	//prints the first chunk
 	firstLast(layers, columns);
 	middle(layers, columns);
+
+	//prints the middle row with the text
 	for (countc = 1; countc <= columns; countc++)
 	{
 		if (countc <= layers || countc > columns - layers)
@@ -44,10 +47,13 @@ void boxPrint(std::string message, int layers)
 		}
 	}
 	std::cout << std::endl;
+
+	//prints the last chunk
 	middle(layers, columns);
 	firstLast(layers, columns);
 }
 
+//prints the purely asterisk lines at the beginning and end
 void firstLast(int layers, int columns)
 {
 	for (int countr = 1; countr <= layers; countr++)
@@ -60,6 +66,7 @@ void firstLast(int layers, int columns)
 	}
 }
 
+//prints the lines around the text that have both asterisks and spaces
 void middle(int layers, int columns)
 {
 	for (int countc = 1; countc <= columns; countc++)
