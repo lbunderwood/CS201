@@ -11,19 +11,25 @@ int main()
 {
 	int number = 0;
 
+	//loops until input is valid
 	while (number <= 0)
 	{
 		std::cout << "Please input an integer: ";
 		std::cin >> number;
+
 		if (number <= 0)
 		{
 			std::cout << "Please choose something larger than 0!" << std::endl;
-		} else {
+
+		}
+		else 
+		{
 			std::cout << std::endl << number << " ";
 		}
 		
 	}
 	
+	//loops until sequence is complete
 	while (number != 1)
 	{
 		switch (number % 2)
@@ -32,6 +38,7 @@ int main()
 			number /= 2;
 			std::cout << number << " ";
 			break;
+
 		case 1:
 			number = number * 3 + 1;
 			std::cout << number << " ";
