@@ -31,6 +31,45 @@ void boxPrint(std::string message, int layers)
 
 	for (countr = 1; countr <= layers; countr++)
 	{
-
+		for (countc = 1; countc <= columns; countc++)
+		{
+			std::cout << "*";
+		}
+		std::cout << std::endl;
 	}
+	for (countc = 1; countc <= columns; countc++)
+	{
+		if (countc <= layers || countc >= columns - layers)
+			std::cout << "*";
+		else
+			std::cout << " ";
+	}
+	for (countc = 1; countc <= columns; countc++)
+	{
+		if (countc <= layers || countc >= columns - layers)
+			std::cout << "*";
+		else if (countc == layers + 1 || countc == columns - layers - 1)
+			std::cout << " ";
+		else
+		{
+			std::cout << message;
+			countc += message.size() - 1;
+		}
+	}
+	for (countc = 1; countc <= columns; countc++)
+	{
+		if (countc <= layers || countc >= columns - layers)
+			std::cout << "*";
+		else
+			std::cout << " ";
+	}
+	for (countr = 1; countr <= layers; countr++)
+	{
+		for (countc = 1; countc <= columns; countc++)
+		{
+			std::cout << "*";
+		}
+		std::cout << std::endl;
+	}
+
 }
