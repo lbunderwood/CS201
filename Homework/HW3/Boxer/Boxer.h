@@ -21,4 +21,8 @@ Contains function boxPrint for Boxer.cpp
 
 void boxPrint(std::string message, int layers);
 
+void firstLast(int layers, int columns);
+
+void middle(int layers, int columns);
+
 #endif
