@@ -31,10 +31,12 @@ int main()
 		//prints prompts, collects info
 		std::cout << "Enter exit, then 0 to end the program\n"
 				  << "Please enter a string: ";
+		
 		getline(std::cin, message);
 
 		std::cout << "Please enter an integer: ";
 		std::cin >> num;
+		std::cin.ignore();
 
 		//error handling and exit condition
 		if(message == "exit" && num == 0)

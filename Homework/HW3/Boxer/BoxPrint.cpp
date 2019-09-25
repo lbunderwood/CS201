@@ -27,7 +27,6 @@ void boxPrint(std::string message, int layers)
 	int columns = message.size() + 2 * layers + 2; //total columns
 	int rows = 2 * layers + 3;					   //total rows
 	int countc = 1;								   //counter for columns
-	int countr = 1;								   //counter for rows
 
 	//prints the first chunk
 	firstLast(layers, columns);
