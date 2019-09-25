@@ -41,7 +41,7 @@ int main()
 		{
 			break;
 		} 
-		else if (num <= 0)
+		else if (num < 0)
 		{
 			std::cout << "Please enter a positive number!\n";
 		}
