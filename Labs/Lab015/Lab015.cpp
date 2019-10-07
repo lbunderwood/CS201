@@ -9,5 +9,6 @@ contains main function for lab 15
 
 int main()
 {
-
+	std::vector<std::string> input{ "69", "69a", "a69", "5.6", "    68", "\t11", "68 69", "0xA" };
+	numSquared(input);
 }
