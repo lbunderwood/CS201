@@ -12,6 +12,6 @@ Contains function prototypes and library inclusions for tokenizer project
 #include<string>
 #include<vector>
 
-
+bool readLine(std::string& str);
 
 #endif
