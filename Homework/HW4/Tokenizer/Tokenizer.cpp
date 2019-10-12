@@ -15,10 +15,7 @@ int main()
 	if (readLine(str))
 	{
 		stringToTokens(tokens, str);
-		for (auto n : tokens)
-		{
-			std::cout << n << std::endl;
-		}
+		analyzeTokens(tokens);
 	}
 	else
 	{

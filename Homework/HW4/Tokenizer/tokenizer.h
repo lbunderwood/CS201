@@ -16,4 +16,7 @@ Contains function prototypes and library inclusions for tokenizer project
 bool readLine(std::string& str);
 
 unsigned stringToTokens(std::vector<std::string>& tokens, std::string str);
+
+void analyzeTokens(const std::vector<std::string>& tokens);
+
 #endif
