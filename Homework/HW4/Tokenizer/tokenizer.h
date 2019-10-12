@@ -13,7 +13,7 @@ Contains function prototypes and library inclusions for tokenizer project
 #include<vector>
 #include<sstream>
 
-bool readLine(std::string& str);
+bool readLine(std::string& line);
 
 unsigned stringToTokens(std::vector<std::string>& tokens, std::string str);
 

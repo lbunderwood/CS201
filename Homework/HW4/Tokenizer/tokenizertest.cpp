@@ -11,17 +11,11 @@ Contains main function for tokenizer hw assignment
 //collects a input from the user as one long string.
 //returns string by reference.
 //returns true if there is a string, false if not.
-bool readLine(std::string& str)
+bool readLine(std::string& line)
 {
-	std::string line;
-	std::cout << "Please enter some text. Type end on its own line,"
-			<< " then hit enter to end." << std::endl;
-	while (line != "end" && line != "End" && line != "END")
-	{
-		std::getline(std::cin, line);
-		str += line;
-	}
-	if (str.empty())
+	std::getline(std::cin, line);
+	
+	if (line.empty())
 		return false;
 	else
 		return true;
@@ -41,7 +35,6 @@ unsigned stringToTokens(std::vector<std::string>& tokens, std::string str)
 		tokens.push_back(a);
 	}
 	tokens.pop_back();
-	tokens.push_back("");
 
 	return tokens.size();
 }
