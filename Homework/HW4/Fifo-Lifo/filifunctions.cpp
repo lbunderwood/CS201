@@ -6,39 +6,33 @@
 #include"Header.h"
 
 
-void fifoPush()
-{
-
-}
-
-
-void fifoPop()
+void Push(std::vector<std::string>& container, const std::string& item)
 {
 
 }
 
 
 
-void lifoPush()
+void fifoPop(std::vector<std::string>& container, const std::string& item)
 {
 
 }
 
 
-void lifoPop()
+void lifoPop(std::vector<std::string>& container, const std::string& item)
 {
 
 }
 
 
 
-bool isContainerEmpty()
+bool isContainerEmpty(const std::vector<std::string>& container)
 {
 
 }
 
 
-void printContainer()
+void printContainer(const std::vector<std::string>& container)
 {
 
 }

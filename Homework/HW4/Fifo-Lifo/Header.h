@@ -10,14 +10,13 @@
 #include<vector>
 #include<string>
 
-void fifoPush();
-void fifoPop();
+void Push(std::vector<std::string>& container, const std::string& item);
 
-void lifoPush();
-void lifoPop();
+void fifoPop(std::vector<std::string>& container);
+void lifoPop(std::vector<std::string>& container);
 
-bool isContainerEmpty();
-void printContainer();
+bool isContainerEmpty(const std::vector<std::string>& container);
+void printContainer(const std::vector<std::string>& container);
 
 bool fifoTest();
 bool lifoTest();
