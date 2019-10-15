@@ -49,21 +49,26 @@ int main()
 			std::getline(std::cin, item);
 			fifoPush(container, item);
 			break;
+
 		case 2: //lifopush
 			std::cout << "Enter the text you would like to add: ";
 			std::cin.ignore();
 			std::getline(std::cin, item);
 			lifoPush(container, item);
 			break;
+
 		case 3: //fifopop
 			fifoPop(container);
 			break;
+
 		case 4: //lifopop
 			lifoPop(container);
 			break;
+
 		case 5: //print everything
 			printContainer(container);
 			break;
+
 		case 6: //diagnostics
 			if (fifoTest())
 			{
@@ -85,6 +90,7 @@ int main()
 				menuchoice = 7;
 			}
 			break;
+
 		case 7: //exit
 			break;
 		}
