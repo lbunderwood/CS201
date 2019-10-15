@@ -69,11 +69,35 @@ void printContainer(const std::vector<std::string>& container)
 
 bool fifoTest()
 {
-	return true;
+	int counter = 0;
+	std::vector<std::string> test = { "0" };
+
+	fifoPush(test, "Hello World");
+	if (test[0] == "Hello World")
+		counter++;
+
+	fifoPop(test);
+	if (test[0] == "0")
+		counter++;
+
+	if (counter == 2)
+		return true;
 }
 
 
 bool lifoTest()
 {
-	return true;
+	int counter = 0;
+	std::vector<std::string> test = { "0" };
+
+	lifoPush(test, "Hello World");
+	if (test[1] == "Hello World")
+		counter++;
+
+	lifoPop(test);
+	if (test[0] == "0" && test.size() == 1)
+		counter++;
+
+	if (counter == 2)
+		return true;
 }
