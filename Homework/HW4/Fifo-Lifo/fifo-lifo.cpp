@@ -8,10 +8,12 @@
 
 int main()
 {
+	//initialize variables
 	int menuchoice = 0;
 	std::string item;
 	std::vector<std::string> container;
 
+	//welcome message
 	std::cout << "Welcome to fifo-lifo, a program that enables you to store "
 		<< "text in a database and manipulate it by either first-in-first-out "
 		<< "(fifo) or last-in-first-out (lifo)." << std::endl;
@@ -30,6 +32,7 @@ int main()
 			<< "\t7. Exit" << std::endl;
 		std::cin >> menuchoice;
 		std::cout << std::endl;
+
 		//check for good input
 		if (menuchoice < 1 || menuchoice > 7)
 		{
@@ -37,30 +40,31 @@ int main()
 			continue;
 		}
 
+		//menu operation
 		switch (menuchoice)
 		{
-		case 1:
+		case 1: //fifopush
 			std::cout << "Enter the text you would like to add: ";
 			std::cin.ignore();
 			std::getline(std::cin, item);
 			fifoPush(container, item);
 			break;
-		case 2:
+		case 2: //lifopush
 			std::cout << "Enter the text you would like to add: ";
 			std::cin.ignore();
 			std::getline(std::cin, item);
 			lifoPush(container, item);
 			break;
-		case 3:
+		case 3: //fifopop
 			fifoPop(container);
 			break;
-		case 4:
+		case 4: //lifopop
 			lifoPop(container);
 			break;
-		case 5:
+		case 5: //print everything
 			printContainer(container);
 			break;
-		case 6:
+		case 6: //diagnostics
 			if (fifoTest())
 			{
 				std::cout << "Fifo works." << std::endl;
@@ -81,11 +85,8 @@ int main()
 				menuchoice = 7;
 			}
 			break;
-		case 7:
+		case 7: //exit
 			break;
 		}
-
-
 	}
-		
 }

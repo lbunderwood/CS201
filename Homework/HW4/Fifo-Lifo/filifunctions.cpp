@@ -5,14 +5,14 @@
 
 #include"Header.h"
 
-
+//Adds an item to the front of the vector
 void fifoPush(std::vector<std::string>& container, const std::string& item)
 {
 	container.emplace(container.begin(),item);
 	std::cout << item << " has been added." << std::endl;
 }
 
-
+//Adds an item to the end of the vector
 void lifoPush(std::vector<std::string>& container, const std::string& item)
 {
 	container.push_back(item);
@@ -20,7 +20,7 @@ void lifoPush(std::vector<std::string>& container, const std::string& item)
 }
 
 
-
+//Removes an item from the front of the vector
 void fifoPop(std::vector<std::string>& container)
 {
 	if (isContainerEmpty(container))
@@ -34,7 +34,7 @@ void fifoPop(std::vector<std::string>& container)
 	}
 }
 
-
+//Removes an item from the end of the vector
 void lifoPop(std::vector<std::string>& container)
 {
 	if (isContainerEmpty(container))
@@ -49,7 +49,7 @@ void lifoPop(std::vector<std::string>& container)
 }
 
 
-
+//checks if the container is empty
 bool isContainerEmpty(const std::vector<std::string>& container)
 {
 	if (container.size())
@@ -58,15 +58,23 @@ bool isContainerEmpty(const std::vector<std::string>& container)
 		return true;
 }
 
-
+//Prints all items in container if there is anything to print
 void printContainer(const std::vector<std::string>& container)
 {
-	for (auto n : container)
-		std::cout << n << std::endl;
+	if (isContainerEmpty(container))
+	{
+		std::cout << "There is noting to print." << std::endl;
+	}
+	else
+	{
+		for (auto n : container)
+			std::cout << n << std::endl;
+	}
 }
 
 
-
+//Tests fifo functions by adding and removing hello world, and checking 
+//if it was added and removed correctly
 bool fifoTest()
 {
 	int counter = 0;
@@ -84,7 +92,8 @@ bool fifoTest()
 		return true;
 }
 
-
+//Tests lifo functions by adding and removing hello world, and checking 
+//if it was added and removed correctly
 bool lifoTest()
 {
 	int counter = 0;
