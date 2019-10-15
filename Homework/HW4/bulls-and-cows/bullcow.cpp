@@ -37,16 +37,15 @@ int main()
 	while(true)
 	{
 		//Sets our number to be four unique random integers 0 to 9
+		number = { 10, 10, 10, 10 };
 		for (int i = 0; i < 4; i++)
 		{
 			srand(time(NULL));
 			int num = rand() % 10;
-			for (int j = 0; j < i; j++)
+			while (number[0] == num || number[1] == num 
+				|| number[2] == num || number[3] == num)
 			{
-				while (number[j] == num)
-				{
-					num = rand() % 10;
-				}
+				num = rand() % 10;
 			}
 			number[i] = num;
 		}
