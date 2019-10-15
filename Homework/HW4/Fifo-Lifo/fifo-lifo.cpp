@@ -16,19 +16,22 @@ int main()
 		<< "text in a database and manipulate it by either first-in-first-out "
 		<< "(fifo) or last-in-first-out (lifo)." << std::endl;
 
-	while (menuchoice != 5)
+	while (menuchoice != 7)
 	{
 		//menu output/input
-		std::cout << "Please enter a number to choose an option:\n"
-			<< "\t1. Add an entry\n"
-			<< "\t2. Remove the first entry added (fifo)\n"
-			<< "\t3. Remove the last entry added (lifo)\n"
-			<< "\t4. Print all of the entries\n"
-			<< "\t5. Exit" << std::endl;
-			std::cin >> menuchoice;
-
+		std::cout << std::endl
+			<< "Please enter a number to choose an option:\n"
+			<< "\t1. Add an entry to the front (fifo)\n"
+			<< "\t2. Add an entry to the end (lifo)\n"
+			<< "\t3. Remove the first entry added (fifo)\n"
+			<< "\t4. Remove the last entry added (lifo)\n"
+			<< "\t5. Print all of the entries\n"
+			<< "\t6. Test fifo and lifo\n"
+			<< "\t7. Exit" << std::endl;
+		std::cin >> menuchoice;
+		std::cout << std::endl;
 		//check for good input
-		if (menuchoice < 1 || menuchoice > 5)
+		if (menuchoice < 1 || menuchoice > 7)
 		{
 			std::cout << "Please enter a valid option" << std::endl;
 			continue;
@@ -38,19 +41,47 @@ int main()
 		{
 		case 1:
 			std::cout << "Enter the text you would like to add: ";
+			std::cin.ignore();
 			std::getline(std::cin, item);
-			Push(container, item);
+			fifoPush(container, item);
 			break;
 		case 2:
-			fifoPop(container);
+			std::cout << "Enter the text you would like to add: ";
+			std::cin.ignore();
+			std::getline(std::cin, item);
+			lifoPush(container, item);
 			break;
 		case 3:
-			lifoPop(container);
+			fifoPop(container);
 			break;
 		case 4:
-			printContainer(container);
+			lifoPop(container);
 			break;
 		case 5:
+			printContainer(container);
+			break;
+		case 6:
+			if (fifoTest())
+			{
+				std::cout << "Fifo works." << std::endl;
+			}
+			else
+			{
+				std::cout << "Fifo is broken." << std::endl;
+				menuchoice = 7;
+			}
+
+			if (lifoTest())
+			{
+				std::cout << "Lifo works." << std::endl;
+			}
+			else
+			{
+				std::cout << "Lifo is broken." << std::endl;
+				menuchoice = 7;
+			}
+			break;
+		case 7:
 			break;
 		}
 

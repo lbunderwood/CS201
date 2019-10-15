@@ -10,7 +10,8 @@
 #include<vector>
 #include<string>
 
-void Push(std::vector<std::string>& container, const std::string& item);
+void lifoPush(std::vector<std::string>& container, const std::string& item);
+void fifoPush(std::vector<std::string>& container, const std::string& item);
 
 void fifoPop(std::vector<std::string>& container);
 void lifoPop(std::vector<std::string>& container);
