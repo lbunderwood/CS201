@@ -15,9 +15,9 @@
 
 #include <string>
 
-/**
- * Holds string and info about its length.
- */
+
+//* Holds string and info about its length.
+ 
 struct StringInfo {
 	std::string str;
 	std::size_t len;
