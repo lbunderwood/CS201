@@ -14,7 +14,8 @@
 #define FILE_TRUNCSTRUCT_HPP_INCLUDED
 
 #include <string>
-
+#include <sstream>
+#include <iostream>
 
 //* Holds string and info about its length.
  
