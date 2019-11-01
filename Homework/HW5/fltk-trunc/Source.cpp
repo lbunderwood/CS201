@@ -40,7 +40,8 @@ void truncPressed(Fl_Widget* w, void* data)
 	Output->value(trunc(foo).str.c_str());
 }
 
-void quitPressed(Fl_Widget* w, void* userdata) {
+void quitPressed(Fl_Widget* w, void* userdata) 
+{
 	//check for nullptr
 	if (!userdata) return;
 
