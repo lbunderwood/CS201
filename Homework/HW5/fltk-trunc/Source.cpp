@@ -45,7 +45,7 @@ void quitPressed(Fl_Widget* w, void* userdata)
 	//check for nullptr
 	if (!userdata) return;
 
-	// userdata to a Window
+	// casts userdata to a Window
 	Fl_Window* window = (Fl_Window*)userdata;
 
 	// hide the window
