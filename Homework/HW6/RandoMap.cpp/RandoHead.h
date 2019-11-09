@@ -18,15 +18,15 @@
 #include <cmath>
 
 //Uniform Distrib
-int randomBetweenU(int first, int last);
+int randomBetweenU(int first, int last, std::mt19937& e2);
 
 //Normal Distrib
-int randomBetweenN(int first, int last);
+int randomBetweenN(int mean, std::mt19937& e2);
 
 //Using rand()
 int randomBetween(int first, int last);
 
 //Print map
-int printDistrib(const std::map<int, int>& numbers);
+void printDistrib(const std::map<int, int>& numbers);
 
 #endif

@@ -9,25 +9,33 @@
 #include "RandoHead.h"
 
 //Uniform Distrib
-int randomBetweenU(int first, int last)
+int randomBetweenU(int first, int last, std::mt19937& e2)
 {
+	std::uniform_int_distribution<> uniform_dist(first, last);
 
+	return (int)std::round(uniform_dist(e2));
 }
 
 //Normal Distrib
-int randomBetweenN(int first, int last)
+int randomBetweenN(int mean, std::mt19937& e2)
 {
+	std::normal_distribution<> normal_dist(mean, 4);
 
+	return (int)std::round(normal_dist(e2));
 }
 
 //Using rand()
 int randomBetween(int first, int last)
 {
-
+	int range = last - first + 1;
+	return (rand() % range) + first;
 }
 
 //Print map
-int printDistrib(const std::map<int, int>& numbers)
+void printDistrib(const std::map<int, int>& numbers)
 {
-
+	for (auto p : numbers) {
+		std::cout << std::fixed << std::setprecision(1) << std::setw(3)
+			<< p.first << ' ' << std::string(p.second / 200, '*') << '\n';
+	}
 }
