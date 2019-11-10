@@ -16,6 +16,9 @@
 #include<string>
 #include<map>
 #include<random>
+#include<iomanip>
+#include<vector>
+#include<sstream>
 
 //Structs
 struct item
@@ -26,7 +29,7 @@ struct item
 };
 
 //functions
-
+void printItems(std::map<std::string, item> list);
 
 
 #endif

@@ -53,7 +53,7 @@ int main()
 	std::normal_distribution<> normal_dist(10, 3);
 
 	//Set quantities randomly for store, normally distributed around 10
-	for (auto n : store)
+	for (auto& n : store)
 	{
 		n.second.quantity = (int)std::round(normal_dist(e2));
 	}
@@ -61,9 +61,62 @@ int main()
 	//Now all of our data is set up, time to print out an interface
 	int menuchoice = 0;
 
-	while (menuchoice != /*EDIT ME*/)
+	//Just a few skyrim and borderlands 2 references to sprinkle in
+	std::vector<std::string> messages =
 	{
+		"Some people call this junk. Me? I call it treasure.\n",
+		"A fantastic day for capitalism!\n",
+		"Let's just get this out of the way. Yes, most of my "
+		"merchandise was ripped from the hands of dead adventurers.\n",
+		"Why loot the dead when you can buy from me?\n",
+		"Looking to protect yourself? Or deal some damage?\n",
+		"You won't find better merchandise anywhere else! "
+		"I've made sure of that.\n",
+		"High quality, low prices, and no questions asked!\n",
+		"Welcome to my humble shop!\n"
+	};
 
+	//uniform distribution to select one of the above voicelines
+	std::uniform_int_distribution<> uniformDist(0, 7);
+
+	//Main program loop. Prints a message, a menu, and allows the user to perform an action once per iteration
+	while (menuchoice != 5)
+	{
+		
+		std::cout << messages[uniformDist(e2)]
+			<< "[Enter one of the numbers below to perform an action]\n"
+			<< "\t1. View available items\n"
+			<< "\t2. Add an item to your cart\n"
+			<< "\t3. Remove an item from your cart\n"
+			<< "\t4. View your current cart\n"
+			<< "\t5. Purchase your items\n"
+			<< std::endl;
+
+		std::string menustring;
+		std::getline(std::cin, menustring);
+		std::istringstream instream(menustring);
+		instream >> menuchoice;
+		if (instream)
+		{
+			switch (menuchoice)
+			{
+			case 1:
+				printItems(store);
+				break;
+			case 2:
+			case 3:
+			case 4:
+				printItems(cart);
+				break;
+			case 5:
+			default:
+				std::cout << "Please enter a number 1-5" << std::endl;
+			}
+		}
+		else
+		{
+			std::cout << "Please enter an integer" << std::endl;
+		}
 	}
 	
 }
