@@ -39,7 +39,7 @@ bool getInt(int& num);
 //moves an item to or from the cart. pass map the item is coming from, then the
 //map it is going to, then the item to be moved, then either "add" or "remove"
 //depending on whether it is going to or from the cart
-int moveItem(
+void moveItem(
 	std::map<std::string, item>& from, std::map<std::string, item>& to,
 	std::string item, std::string direction);
 

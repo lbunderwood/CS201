@@ -33,7 +33,7 @@ bool getInt(int& num)
 		return false;
 }
 
-int moveItem(
+void moveItem(
 	std::map<std::string, item>& from, std::map<std::string, item>& to, 
 	std::string item, std::string direction)
 {
@@ -60,6 +60,7 @@ void moveMenu(
 	for (auto n : from)
 	{
 		std::cout << "\t" << i << ". " << n.first << std::endl;
+		i++;
 	}
 
 	int menuchoice;
@@ -70,19 +71,19 @@ void moveMenu(
 		switch (menuchoice)
 		{
 		case 1:
-			moveItem(from, to, "Health Potion", direction);
+			moveItem(from, to, "Health Potions", direction);
 			break;
 		case 2:
-			moveItem(from, to, "Magica Potion", direction);
+			moveItem(from, to, "Magica Potions", direction);
 			break;
 		case 3:
-			moveItem(from, to, "Shield", direction);
+			moveItem(from, to, "Shields", direction);
 			break;
 		case 4:
-			moveItem(from, to, "Spellbook", direction);
+			moveItem(from, to, "Spellbooks", direction);
 			break;
 		case 5:
-			moveItem(from, to, "Sword", direction);
+			moveItem(from, to, "Swords", direction);
 			break;
 		default:
 			std::cout << "Please enter a number 1-5" << std::endl;

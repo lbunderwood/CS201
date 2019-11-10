@@ -111,14 +111,22 @@ int main()
 				break;
 			case 4:
 				printItems(cart);
-				auto mult = [](int total, std::pair<std::string, item> current)
-				{
-					return total + current.second.price * current.second.quantity;
-				};
 				std::cout << "Total Price: " 
-					<< std::accumulate(cart.begin(), cart.end(), 0, mult);
+					<< std::accumulate(cart.begin(), cart.end(), 0, 
+						[](int total, std::pair<std::string, item> current)
+						{
+							return total + current.second.price * current.second.quantity;
+						})
+					<< std::endl;
 				break;
 			case 5:
+				std::cout << "You have been charged " 
+					<< std::accumulate(cart.begin(), cart.end(), 0,
+						[](int total, std::pair<std::string, item> current)
+						{
+							return total + current.second.price * current.second.quantity;
+						})
+					<< " gold pieces for " << 
 			default:
 				std::cout << "Please enter a number 1-5" << std::endl;
 			}
