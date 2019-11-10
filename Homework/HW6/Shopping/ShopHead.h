@@ -15,13 +15,14 @@
 #include<algorithm>
 #include<string>
 #include<map>
+#include<random>
 
 //Structs
 struct item
 {
-	int quantity;
+	int quantity = 0;
 	double price;
-	std::string desctription;
+	std::string description;
 };
 
 //functions
