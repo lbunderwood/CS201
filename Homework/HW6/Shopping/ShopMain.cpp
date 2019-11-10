@@ -126,7 +126,19 @@ int main()
 						{
 							return total + current.second.price * current.second.quantity;
 						})
-					<< " gold pieces for " << 
+					<< " gold pieces for ";
+				for (auto n : cart)
+				{
+					if (n.second.quantity != 0)
+					{
+						std::cout << n.second.quantity << " " << n.first;
+						if (n.first != "Swords")
+						{
+							std::cout << ", ";
+						}
+					}
+				}
+				break;
 			default:
 				std::cout << "Please enter a number 1-5" << std::endl;
 			}
