@@ -37,12 +37,19 @@ void moveItem(
 	std::map<std::string, item>& from, std::map<std::string, item>& to, 
 	std::string item, std::string direction)
 {
-	int quantity;
+	int quantityMoved;
 	std::cout << "How many would you like to " << direction << "?" << std::endl;
-	if (getInt(quantity))
+	if (getInt(quantityMoved))
 	{
-		from[item].quantity -= quantity;
-		to[item].quantity += quantity;
+		if (quantityMoved <= from[item].quantity)
+		{
+			from[item].quantity -= quantityMoved;
+			to[item].quantity += quantityMoved;
+		}
+		else
+		{
+			std::cout << "There are not that many " << item << std::endl;
+		}
 	}
 	else
 	{
