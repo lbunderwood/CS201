@@ -104,9 +104,19 @@ int main()
 				printItems(store);
 				break;
 			case 2:
+				moveMenu(store, cart, "add");
+				break;
 			case 3:
+				moveMenu(cart, store, "remove");
+				break;
 			case 4:
 				printItems(cart);
+				auto mult = [](int total, std::pair<std::string, item> current)
+				{
+					return total + current.second.price * current.second.quantity;
+				};
+				std::cout << "Total Price: " 
+					<< std::accumulate(cart.begin(), cart.end(), 0, mult);
 				break;
 			case 5:
 			default:

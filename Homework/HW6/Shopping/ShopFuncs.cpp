@@ -33,9 +33,28 @@ bool getInt(int& num)
 		return false;
 }
 
-void addToCart(std::map<std::string, item>& from, std::map<std::string, item>& to)
+int moveItem(
+	std::map<std::string, item>& from, std::map<std::string, item>& to, 
+	std::string item, std::string direction)
 {
-	std::cout << "Which item would you like to add to your cart?\n"
+	int quantity;
+	std::cout << "How many would you like to " << direction << "?" << std::endl;
+	if (getInt(quantity))
+	{
+		from[item].quantity -= quantity;
+		to[item].quantity += quantity;
+	}
+	else
+	{
+		std::cout << "Please enter a valid input";
+	}
+}
+
+void moveMenu(
+	std::map<std::string, item>& from, std::map<std::string, item>& to, 
+	std::string direction)
+{
+	std::cout << "Which item would you like to " << direction << "?\n"
 		<< "[Enter one of the numbers below to perform an action]\n";
 	int i = 1;
 	for (auto n : from)
@@ -44,24 +63,27 @@ void addToCart(std::map<std::string, item>& from, std::map<std::string, item>& t
 	}
 
 	int menuchoice;
-	std::string menustring;
-	std::getline(std::cin, menustring);
-	std::istringstream instream(menustring);
-	instream >> menuchoice;
+	int quantity;
 
-	if (instream)
+	if (getInt(menuchoice))
 	{
 		switch (menuchoice)
 		{
 		case 1:
-			printItems(store);
+			moveItem(from, to, "Health Potion", direction);
 			break;
 		case 2:
+			moveItem(from, to, "Magica Potion", direction);
+			break;
 		case 3:
+			moveItem(from, to, "Shield", direction);
+			break;
 		case 4:
-			printItems(cart);
+			moveItem(from, to, "Spellbook", direction);
 			break;
 		case 5:
+			moveItem(from, to, "Sword", direction);
+			break;
 		default:
 			std::cout << "Please enter a number 1-5" << std::endl;
 		}
