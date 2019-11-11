@@ -98,6 +98,7 @@ int main()
 		instream >> menuchoice;
 		if (instream)
 		{
+			std::string quantList;
 			switch (menuchoice)
 			{
 			case 1:
@@ -131,13 +132,14 @@ int main()
 				{
 					if (n.second.quantity != 0)
 					{
-						std::cout << n.second.quantity << " " << n.first;
-						if (n.first != "Swords")
-						{
-							std::cout << ", ";
-						}
+						quantList += std::to_string(n.second.quantity);
+						quantList += " ";
+						quantList += n.first;
+						quantList += ", ";
 					}
 				}
+				quantList.erase(quantList.end() - 2, quantList.end());
+				std::cout << quantList;
 				break;
 			default:
 				std::cout << "Please enter a number 1-5" << std::endl;
