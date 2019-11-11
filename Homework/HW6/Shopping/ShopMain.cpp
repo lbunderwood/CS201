@@ -82,7 +82,7 @@ int main()
 	//Main program loop. Prints a message, a menu, and allows the user to perform an action once per iteration
 	while (menuchoice != 5)
 	{
-		
+		//print a randomized message, then the menu
 		std::cout << messages[uniformDist(e2)]
 			<< "[Enter one of the numbers below to perform an action]\n"
 			<< "\t1. View available items\n"
@@ -92,53 +92,80 @@ int main()
 			<< "\t5. Purchase your items\n"
 			<< std::endl;
 
-		std::string menustring;
-		std::getline(std::cin, menustring);
-		std::istringstream instream(menustring);
-		instream >> menuchoice;
-		if (instream)
+		//if input is good, call either printItems for the cart or the store,
+		//or moveMenu from store to cart or cart to store
+		if (getInt(menuchoice))
 		{
+			//declare a string for later because apparently I can't declare it
+			//inside the switch?? Why??
 			std::string quantList;
+
 			switch (menuchoice)
 			{
+
 			case 1:
+				//print the items in the store
 				printItems(store);
 				break;
+
 			case 2:
+				//print the menu to "add" things to the cart
 				moveMenu(store, cart, "add");
 				break;
+
 			case 3:
+				//print the menu to "remove" things from the cart
 				moveMenu(cart, store, "remove");
 				break;
+
 			case 4:
+				//print the items in the cart
 				printItems(cart);
+
+				//print the total price of the things in the cart
 				std::cout << "Total Price: " 
 					<< std::accumulate(cart.begin(), cart.end(), 0, 
+						//lambda function to handle cart and item members
+						//inside of accumulate
 						[](int total, std::pair<std::string, item> current)
 						{
-							return total + current.second.price * current.second.quantity;
+							return total + 
+								current.second.price * current.second.quantity;
 						})
 					<< std::endl;
 				break;
+
 			case 5:
+				//prints checkout message
 				std::cout << "You have been charged " 
 					<< std::accumulate(cart.begin(), cart.end(), 0,
+						//same accumulate as above. A little bit of code smell
+						//but I can't be bothered with this one.
 						[](int total, std::pair<std::string, item> current)
 						{
-							return total + current.second.price * current.second.quantity;
+							return total + 
+								current.second.price * current.second.quantity;
 						})
 					<< " gold pieces for ";
+
+				//iterates through cart
 				for (auto n : cart)
 				{
+					//checks if there are any of a particular item
 					if (n.second.quantity != 0)
 					{
+						//adds pieces of message
 						quantList += std::to_string(n.second.quantity);
 						quantList += " ";
 						quantList += n.first;
 						quantList += ", ";
 					}
 				}
+
+				//this is the reason we're doing this part of the message
+				//as a concatonated string. We need to remove that final ", "
 				quantList.erase(quantList.end() - 2, quantList.end());
+				//...before we print it out
 				std::cout << quantList;
 				break;
 			default:
@@ -150,5 +177,4 @@ int main()
 			std::cout << "Please enter an integer" << std::endl;
 		}
 	}
-	
 }

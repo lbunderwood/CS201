@@ -20,6 +20,7 @@
 #include<vector>
 #include<sstream>
 
+
 //Holds quantity, price, and description of an item
 struct item
 {
@@ -28,9 +29,11 @@ struct item
 	std::string description;
 };
 
-//functions
 
-//Prints all of the items either in the cart or shop with all of their information
+//Functions:
+
+//Prints all of the items either in the cart or shop with all of 
+//their information
 void printItems(std::map<std::string, item> list);
 
 //returns whether an int was entered, and returns the int by reference

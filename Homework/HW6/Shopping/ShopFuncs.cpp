@@ -19,6 +19,7 @@ void printItems(std::map<std::string, item> list)
 	}
 }
 
+
 bool getInt(int& num)
 {
 	std::string input;
@@ -33,16 +34,25 @@ bool getInt(int& num)
 		return false;
 }
 
+
 void moveItem(
 	std::map<std::string, item>& from, std::map<std::string, item>& to, 
 	std::string item, std::string direction)
 {
 	int quantityMoved;
+
+	//Had this great idea of throwing in a "direction" variable so that this
+	//message makes sense and the same function can be used for cart to shop
+	//and shop to cart. It is either add or remove
 	std::cout << "How many would you like to " << direction << "?" << std::endl;
+
+	//if the input is good...
 	if (getInt(quantityMoved))
 	{
+		//...and if the quantity being moved does no exceed the total quantity
 		if (quantityMoved <= from[item].quantity)
 		{
+			//pull one that number of items out of one thing and into the other
 			from[item].quantity -= quantityMoved;
 			to[item].quantity += quantityMoved;
 		}
@@ -61,8 +71,12 @@ void moveMenu(
 	std::map<std::string, item>& from, std::map<std::string, item>& to, 
 	std::string direction)
 {
+	//again I used the "direction" variable so my messages make sense
+	//and I avoid massive ammounts of repeated code
 	std::cout << "Which item would you like to " << direction << "?\n"
 		<< "[Enter one of the numbers below to perform an action]\n";
+
+	//Prints out lines of the menu
 	int i = 1;
 	for (auto n : from)
 	{
@@ -70,9 +84,11 @@ void moveMenu(
 		i++;
 	}
 
+	//set up some variables for the menu
 	int menuchoice;
 	int quantity;
 
+	//if the input is good, call moveItem with the appropriate item
 	if (getInt(menuchoice))
 	{
 		switch (menuchoice)
