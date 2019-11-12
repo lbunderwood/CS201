@@ -17,11 +17,16 @@ int randomBetweenU(int first, int last, std::mt19937& e2)
 }
 
 //Normal Distrib
-int randomBetweenN(int mean, std::mt19937& e2)
+int randomBetweenN(int mean, int radius, std::mt19937& e2)
 {
 	std::normal_distribution<> normal_dist(mean, 4);
-
-	return (int)std::round(normal_dist(e2));
+	int num = (int)std::round(normal_dist(e2));
+	if (num > mean + radius)
+		return mean + radius;
+	else if (num < mean - radius)
+		return mean - radius;
+	else
+		return num;
 }
 
 //Using rand()

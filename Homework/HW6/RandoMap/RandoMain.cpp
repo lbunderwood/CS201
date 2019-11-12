@@ -15,8 +15,10 @@ int main()
 	std::default_random_engine e1(r());
 	std::uniform_int_distribution<int> uniform_dist(1, 6);
 	int mean = uniform_dist(e1);
-	std::cout << "Randomly-chosen mean: " << mean << '\n';
-
+	int radius = 12;
+	std::cout << "Randomly-chosen mean: " << mean << '\n'
+		<< "Radius: " << radius << std::endl;
+	
 	// Generate a normally distributed number around the mean
 	std::seed_seq seed2{ r(), r(), r(), r(), r(), r(), r(), r() };
 	std::mt19937 e2(seed2);
@@ -24,13 +26,13 @@ int main()
 	std::map<int, int> normal;
 	for (size_t i = 0; i < 100000; i++)
 	{
-		++normal[randomBetweenN(mean, e2)];
+		++normal[randomBetweenN(mean, radius, e2)];
 	}
 	std::cout << "Normal distribution around " << mean << ":\n";
 	printDistrib(normal);
-	
-	int first = mean - 3;
-	int last = mean + 3;
+
+	int first = mean - radius;
+	int last = mean + radius;
 	std::map<int, int> uniform;
 	for (size_t i = 0; i < 100000; i++)
 	{

@@ -90,23 +90,23 @@ void performOperation(std::vector<double>& numbers,
 	double calculated = 0;
 	if (operators.back() == "+")
 	{
-		calculated = numbers.back() + numbers[numbers.size() - 2];
+		calculated = numbers[numbers.size() - 2] + numbers.back();
 	}
 	else if (operators.back() == "-")
 	{
-		calculated = numbers.back() - numbers[numbers.size() - 2];
+		calculated = numbers[numbers.size() - 2] - numbers.back();
 	}
 	else if (operators.back() == "*")
 	{
-		calculated = numbers.back() * numbers[numbers.size() - 2];
+		calculated = numbers[numbers.size() - 2] * numbers.back();
 	}
 	else if (operators.back() == "/")
 	{
-		calculated = numbers.back() / numbers[numbers.size() - 2];
+		calculated = numbers[numbers.size() - 2] / numbers.back();
 	}
 	else if (operators.back() == "^")
 	{
-		calculated = pow(numbers.back(), numbers[numbers.size() - 2]);
+		calculated = pow(numbers[numbers.size() - 2], numbers.back());
 	}
 	numbers.pop_back();
 	numbers.back() = calculated;

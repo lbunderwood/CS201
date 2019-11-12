@@ -21,7 +21,7 @@
 int randomBetweenU(int first, int last, std::mt19937& e2);
 
 //Normal Distrib
-int randomBetweenN(int mean, std::mt19937& e2);
+int randomBetweenN(int mean, int radius, std::mt19937& e2);
 
 //Using rand()
 int randomBetween(int first, int last);
