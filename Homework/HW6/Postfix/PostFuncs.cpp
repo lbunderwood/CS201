@@ -47,71 +47,82 @@ unsigned stringToTokens(std::vector<std::string>& tokens, std::string str)
 
 //Classifies each token, then prints it along with its classification
 //returns void
-void analyzeTokens(const std::vector<std::string>& tokens)
+void analyzeTokens(const std::vector<std::string>& tokens, 
+	std::vector<double>& numbers, std::vector<std::string>& operators)
 {
 	for (auto n : tokens)
 	{
 		//Checks if the string is an integer literal
-		if (n[0] >= '0' && n[0] <= '9')
+		if (n[0] == '.' || (n[0] >= '0' && n[0] <= '9'))
 		{
 			for (unsigned int i = 0; i < n.size(); i++)
 			{
-				if ((n[i] >= '!' && n[i] <= '/') || (n[i] >= ':' && n[i] <= '@')
-					|| (n[i] >= '[' && n[i] <= '`') || (n[i] >= '{' && n[i] <= '~'))
+				if (!(n[i] == '.' || (n[i] >= '0' && n[i] <= '9')))
 				{
-					std::cout << "[special]\t\t\"" << n << "\"\n";
-					break;
-				}
-				else if (!(n[i] >= '0' && n[i] <= '9'))
-				{
-					std::cout << "[unidentified]\t\t\"" << n << "\"\n";
+					std::cout << "[Unidentified]\t\t\"" << n << "\"\n";
 					break;
 				}
 				else if (i == n.size() - 1)
 				{
-					std::cout << "[integer]\t\t\"" << n << "\"\n";
+					std::cout << "[Number]\t\t\"" << n << "\"\n";
+					std::istringstream instream(n);
+					double num;
+					instream >> num;
+					numbers.push_back(num);
 				}
 			}
 		}
-
-		//Checks if the string is an identifier literal
-		if ((n[0] >= 'a' && n[0] <= 'z') || (n[0] >= 'A' && n[0] <= 'Z')
-			|| n[0] == '_')
+		else if (n == "+" || n == "-" || n == "/" || n == "*" || n == "^")
 		{
-			for (unsigned int i = 0; i < n.size(); i++)
-			{
-				if ((n[i] >= '!' && n[i] <= '/') || (n[i] >= ':' && n[i] <= '@')
-					|| (n[i] >= '[' && n[i] <= '`') || (n[i] >= '{' && n[i] <= '~'))
-				{
-					std::cout << "[special]\t\t\"" << n << "\"\n";
-					break;
-				}
-				else if (i == n.size() - 1)
-				{
-					std::cout << "[identifier]\t\t\"" << n << "\"\n";
-				}
-			}
+			std::cout << "[Operator]\t\t\"" << n << "\"\n";
+			operators.push_back(n);
 		}
-
-		//Checks if the string is a whitespace literal
-		if (n[0] >= 0 && n[0] <= 32)
+		else
 		{
-			std::cout << "[whitespace]\t\t\"" << n << "\"\n";
-			continue;
-		}
-
-		//Checks if the string is a string literal
-		if (n[0] == '"' && n[n.size()-1] == '"')
-		{
-			std::cout << "[string]\t\t\"" << n << "\"\n";
-			continue;
-		}
-
-		//Checks if the string has special characters
-		if ((n[0] >= '!' && n[0] <= '/') || (n[0] >= ':' && n[0] <= '@') 
-			|| (n[0] >= '[' && n[0] <= '`') || (n[0] >= '{' && n[0] <= '~'))
-		{
-			std::cout << "[special]\t\t\"" << n << "\"\n";
+			std::cout << "[Unidentified]\t\t\"" << n << "\"\n";
 		}
 	}
+}
+
+void performOperation(std::vector<double>& numbers, 
+	std::vector<std::string>& operators)
+{
+	double calculated = 0;
+	if (operators.back() == "+")
+	{
+		calculated = numbers.back() + numbers[numbers.size() - 2];
+	}
+	else if (operators.back() == "-")
+	{
+		calculated = numbers.back() - numbers[numbers.size() - 2];
+	}
+	else if (operators.back() == "*")
+	{
+		calculated = numbers.back() * numbers[numbers.size() - 2];
+	}
+	else if (operators.back() == "/")
+	{
+		calculated = numbers.back() / numbers[numbers.size() - 2];
+	}
+	else if (operators.back() == "^")
+	{
+		calculated = pow(numbers.back(), numbers[numbers.size() - 2]);
+	}
+	numbers.pop_back();
+	numbers.back() = calculated;
+	operators.pop_back();
+}
+
+void printVectors(std::vector<double> numbers,
+	std::vector<std::string> operators)
+{
+	for (auto n : numbers)
+	{
+		std::cout << n << " ";
+	}
+	for (auto n : operators)
+	{
+		std::cout << n << " ";
+	}
+	std::cout << std::endl;
 }

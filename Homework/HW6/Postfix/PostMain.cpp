@@ -16,8 +16,11 @@ int main()
 {
 	std::string str;
 	std::vector<std::string> tokens;
+	std::vector<double> numbers;
+	std::vector<std::string> operators;
 
-	std::cout << "Please enter some text. Type end on its own line,"
+	std::cout << "Please enter what you would like to calculate. Valid "
+		<< "operators are +, -, /, *, and ^. Type end on its own line,"
 		<< " then hit enter to end." << std::endl;
 
 	while (str != "end" && str != "End" && str != "END")
@@ -37,5 +40,19 @@ int main()
 		}
 	}
 
-	analyzeTokens(tokens);
+	analyzeTokens(tokens, numbers, operators);
+	
+	if (numbers.size() == operators.size() + 1)
+	{
+		while (numbers.size() != 1)
+		{
+			printVectors(numbers, operators);
+			performOperation(numbers, operators);
+		}
+		std::cout << " = " << numbers[0];
+	}
+	else
+	{
+		std::cout << "ERROR: INVALID INPUT";
+	}
 }

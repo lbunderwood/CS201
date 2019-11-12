@@ -22,6 +22,14 @@ bool readLine(std::string& line);
 
 unsigned stringToTokens(std::vector<std::string>& tokens, std::string str);
 
-void analyzeTokens(const std::vector<std::string>& tokens);
+void analyzeTokens(const std::vector<std::string>& tokens,
+	std::vector<double>& numbers, std::vector<std::string>& operators);
+
+void performOperation(std::vector<double>& numbers,
+	std::vector<std::string>& operators);
+
+void printVectors(std::vector<double> numbers,
+	std::vector<std::string> operators);
+
 
 #endif
