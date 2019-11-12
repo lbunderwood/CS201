@@ -99,7 +99,11 @@ int main()
 			//declare a string for later because apparently I can't declare it
 			//inside the switch?? Why??
 			std::string quantList;
-
+			auto additionRules = [](int total, std::pair<std::string, item> current)
+			{
+				return total +
+					current.second.price * current.second.quantity;
+			};
 			switch (menuchoice)
 			{
 
@@ -124,28 +128,16 @@ int main()
 
 				//print the total price of the things in the cart
 				std::cout << "Total Price: " 
-					<< std::accumulate(cart.begin(), cart.end(), 0, 
-						//lambda function to handle cart and item members
-						//inside of accumulate
-						[](int total, std::pair<std::string, item> current)
-						{
-							return total + 
-								current.second.price * current.second.quantity;
-						})
+					<< std::accumulate(cart.begin(), cart.end(), 
+						0, additionRules)
 					<< std::endl;
 				break;
 
 			case 5:
 				//prints checkout message
 				std::cout << "You have been charged " 
-					<< std::accumulate(cart.begin(), cart.end(), 0,
-						//same accumulate as above. A little bit of code smell
-						//but I can't be bothered with this one.
-						[](int total, std::pair<std::string, item> current)
-						{
-							return total + 
-								current.second.price * current.second.quantity;
-						})
+					<< std::accumulate(cart.begin(), cart.end(), 
+						0, additionRules)
 					<< " gold pieces for ";
 
 				//iterates through cart
