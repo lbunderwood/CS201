@@ -99,6 +99,8 @@ int main()
 			//declare a string for later because apparently I can't declare it
 			//inside the switch?? Why??
 			std::string quantList;
+
+			//declare a lambda function to tell accumulate how to handle the map
 			auto additionRules = [](int total, std::pair<std::string, item> current)
 			{
 				return total +
