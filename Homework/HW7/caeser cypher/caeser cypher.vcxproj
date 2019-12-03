@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{24E8BE27-6EEC-4C36-9510-8139C2E10E78}</ProjectGuid>
-    <RootNamespace>Lab035</RootNamespace>
+    <ProjectGuid>{D953C250-E14C-46FC-B5A1-B6037E823CA0}</ProjectGuid>
+    <RootNamespace>caesercypher</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,11 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="student.cpp" />
-    <ClCompile Include="student_main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="student.h" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

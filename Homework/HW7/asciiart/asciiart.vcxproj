@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{24E8BE27-6EEC-4C36-9510-8139C2E10E78}</ProjectGuid>
-    <RootNamespace>Lab035</RootNamespace>
+    <ProjectGuid>{213B8BCB-11FB-410E-B026-9B80E725BD2D}</ProjectGuid>
+    <RootNamespace>asciiart</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,11 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="student.cpp" />
-    <ClCompile Include="student_main.cpp" />
+    <ClInclude Include="Color3.hpp" />
+    <ClInclude Include="Image3.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="student.h" />
+    <ClCompile Include="asciiart.cpp" />
+    <ClCompile Include="Color3.cpp" />
+    <ClCompile Include="Image3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
