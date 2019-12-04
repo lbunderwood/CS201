@@ -9,6 +9,14 @@
 
 class Simulator
 {
+public:
+
+	//Default Constructor
+	Simulator();
+
+
+
+private:
 };
 
 #endif

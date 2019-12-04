@@ -5,3 +5,6 @@
 // CS201
 
 #include "simulator.h"
+
+Simulator::Simulator() {};
+

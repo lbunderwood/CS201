@@ -9,6 +9,18 @@
 
 class Environment
 {
+public:
+
+	//Default constructor
+	Environment();
+
+	//Constructor with (double temp, bool heater), with true = heater on
+	Environment(double temperature, bool heater);
+
+private:
+
+	double temperature_;
+	bool heaterOn_;
 };
 
 #endif

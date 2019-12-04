@@ -6,3 +6,9 @@
 
 #include "agent.h"
 
+Agent::Agent() : 
+	bounds_(15, 25) {}
+
+Agent::Agent(double lower, double upper) : 
+	bounds_(lower, upper) {}
+
