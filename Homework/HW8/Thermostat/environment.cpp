@@ -12,4 +12,14 @@ Environment::Environment() :
 Environment::Environment(double temperature, bool heater) : 
 	temperature_(temperature), heaterOn_(heater) {}
 
-
+void Environment::iteration()
+{
+	if (heaterOn_)
+	{
+		temperature_++;
+	}
+	else
+	{
+		temperature_--;
+	}
+}

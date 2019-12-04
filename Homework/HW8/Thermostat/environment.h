@@ -4,8 +4,8 @@
 // Thermostat project
 // CS201
 
-#ifndef SIMULATOR_H
-#define SIMULATOR_H
+#ifndef ENVIRONMENT_H
+#define ENVIRONMENT_H
 
 class Environment
 {
@@ -16,6 +16,9 @@ public:
 
 	//Constructor with (double temp, bool heater), with true = heater on
 	Environment(double temperature, bool heater);
+
+	//Adjusts temperature based on current conditions
+	void iteration();
 
 private:
 

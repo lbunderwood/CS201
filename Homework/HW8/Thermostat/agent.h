@@ -4,8 +4,8 @@
 // Thermostat project
 // CS201
 
-#ifndef SIMULATOR_H
-#define SIMULATOR_H
+#ifndef AGENT_H
+#define AGENT_H
 #include<utility>
 
 class Agent
@@ -19,6 +19,8 @@ public:
 	Agent(double lower, double upper);
 
 private:
+
+	//holds lower, upper bounds set by user
 	std::pair<double, double> bounds_;
 };
 
