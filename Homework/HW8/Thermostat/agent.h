@@ -7,6 +7,7 @@
 #ifndef AGENT_H
 #define AGENT_H
 #include<utility>
+#include"environment.h"
 
 class Agent
 {
@@ -17,6 +18,15 @@ public:
 
 	//Constructor with bounds (double lower, double upper)
 	Agent(double lower, double upper);
+
+	//Checks current temperature
+	void percieve(Environment environment);
+
+	//Returns true if heater should be on, returns false if not
+	bool think();
+
+	//acts on environment if neccessary
+	void act(Environment environment);
 
 private:
 

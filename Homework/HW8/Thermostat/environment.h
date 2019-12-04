@@ -20,6 +20,12 @@ public:
 	//Adjusts temperature based on current conditions
 	void iteration();
 
+	//returns the current temp
+	double getTemperature();
+
+	//switches the heater on or off
+	void changeHeater();
+
 private:
 
 	double temperature_;

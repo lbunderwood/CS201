@@ -23,3 +23,14 @@ void Environment::iteration()
 		temperature_--;
 	}
 }
+
+double Environment::getTemperature()
+{
+	return heaterOn_;
+}
+
+void Environment::changeHeater()
+{
+	heaterOn_ = !heaterOn_;
+}
+
