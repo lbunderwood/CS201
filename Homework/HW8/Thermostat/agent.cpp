@@ -14,17 +14,21 @@ Agent::Agent(double lower, double upper) :
 
 std::pair<double, bool> Agent::percieve(Environment environment)
 {
-	std::pair<double, bool> status = { environment.getTemperature(), environment.getHeater() };
+	std::pair<double, bool> status = 
+		{ environment.getTemperature(), environment.getHeater() };
+
 	return status;
 }
 
 bool Agent::think(Environment environment)
 {
-	if (percieve(environment).first >= bounds_.second && percieve(environment).second)
+	if (percieve(environment).first >= bounds_.second 
+		&& percieve(environment).second)
 	{
 		return true;
 	}
-	else if (percieve(environment).first <= bounds_.first && !percieve(environment).second)
+	else if (percieve(environment).first <= bounds_.first 
+		&& !percieve(environment).second)
 	{
 		return true;
 	}
@@ -34,3 +38,16 @@ bool Agent::think(Environment environment)
 	}
 }
 
+void Agent::act(Environment environment)
+{
+	if (think(environment))
+	{
+		environment.changeHeater();
+	}
+}
+
+void Agent::setBounds(double lower, double upper)
+{
+	std::pair<double, double> bounds = { lower, upper };
+	bounds_ = bounds;
+}

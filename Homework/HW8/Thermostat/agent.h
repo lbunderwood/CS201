@@ -28,6 +28,9 @@ public:
 	//acts on environment if neccessary
 	void act(Environment environment);
 
+	//sets new bounds
+	void setBounds(double lower, double upper);
+
 private:
 
 	//holds lower, upper bounds set by user

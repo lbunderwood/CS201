@@ -7,12 +7,12 @@
 #include"agent.h"
 #include"environment.h"
 #include"simulator.h"
+#include<iostream>
+#include<sstream>
 
 int main()
 {
-	Agent agent;
-	Environment environment;
 	Simulator simulator;
 
-
+	while (simulator.askOwner()) {}
 }

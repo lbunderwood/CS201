@@ -6,6 +6,8 @@
 
 #ifndef SIMULATOR_H
 #define SIMULATOR_H
+#include"agent.h"
+#include"environment.h"
 
 class Simulator
 {
@@ -14,9 +16,15 @@ public:
 	//Default Constructor
 	Simulator();
 
-
+	//Gets new bounds and gives option to exit program
+	bool askOwner();
 
 private:
+	Agent agent;
+	Environment environment;
 };
+
+
+bool getDouble(double& input);
 
 #endif
