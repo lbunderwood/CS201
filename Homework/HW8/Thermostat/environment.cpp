@@ -26,6 +26,11 @@ void Environment::iteration()
 
 double Environment::getTemperature()
 {
+	return temperature_;
+}
+
+bool Environment::getHeater()
+{
 	return heaterOn_;
 }
 

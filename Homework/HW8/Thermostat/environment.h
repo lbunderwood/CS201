@@ -23,6 +23,9 @@ public:
 	//returns the current temp
 	double getTemperature();
 
+	//returns the current heater status
+	bool getHeater();
+
 	//switches the heater on or off
 	void changeHeater();
 

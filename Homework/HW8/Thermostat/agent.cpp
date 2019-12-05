@@ -12,3 +12,25 @@ Agent::Agent() :
 Agent::Agent(double lower, double upper) : 
 	bounds_(lower, upper) {}
 
+std::pair<double, bool> Agent::percieve(Environment environment)
+{
+	std::pair<double, bool> status = { environment.getTemperature(), environment.getHeater() };
+	return status;
+}
+
+bool Agent::think(Environment environment)
+{
+	if (percieve(environment).first >= bounds_.second && percieve(environment).second)
+	{
+		return true;
+	}
+	else if (percieve(environment).first <= bounds_.first && !percieve(environment).second)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+

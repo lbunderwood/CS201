@@ -20,10 +20,10 @@ public:
 	Agent(double lower, double upper);
 
 	//Checks current temperature
-	void percieve(Environment environment);
+	std::pair<double, bool> percieve(Environment environment);
 
-	//Returns true if heater should be on, returns false if not
-	bool think();
+	//Returns true if heater should be changed
+	bool think(Environment environment);
 
 	//acts on environment if neccessary
 	void act(Environment environment);
