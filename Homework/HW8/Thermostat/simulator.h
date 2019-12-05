@@ -19,6 +19,9 @@ public:
 	//Gets new bounds and gives option to exit program
 	bool askOwner();
 
+	//Runs simulation
+	void run();
+
 private:
 	Agent agent;
 	Environment environment;

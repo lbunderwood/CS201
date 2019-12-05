@@ -51,3 +51,8 @@ void Agent::setBounds(double lower, double upper)
 	std::pair<double, double> bounds = { lower, upper };
 	bounds_ = bounds;
 }
+
+std::pair<double, double> Agent::getBounds() 
+{
+	return bounds_;
+}

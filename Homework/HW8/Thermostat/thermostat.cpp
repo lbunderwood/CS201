@@ -13,6 +13,5 @@
 int main()
 {
 	Simulator simulator;
-
-	while (simulator.askOwner()) {}
+	simulator.run();
 }

@@ -31,6 +31,9 @@ public:
 	//sets new bounds
 	void setBounds(double lower, double upper);
 
+	//gets bounds
+	std::pair<double, double> getBounds();
+
 private:
 
 	//holds lower, upper bounds set by user

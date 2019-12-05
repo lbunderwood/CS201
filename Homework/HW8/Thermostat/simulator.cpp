@@ -13,15 +13,10 @@ Simulator::Simulator() {};
 
 bool Simulator::askOwner()
 {
-	for (int i = 0; i < 10; i++)
-	{
-		environment.iteration();
-		agent.act(environment);
-		std::cout << "Current temp: " << environment.getTemperature() << " C"
-			<< std::endl;
-	}
 
-	std::cout << "Would you like to change the bounds?" << std::endl
+	std::cout << "The current bounds are: " << agent.getBounds().first
+		<< " , " << agent.getBounds().second << std::endl
+		<< "Would you like to change the bounds?" << std::endl
 		<< "Enter Y or N (or enter E to end simulation): ";
 
 	std::string line;
@@ -53,6 +48,20 @@ bool Simulator::askOwner()
 	}
 
 	return true;
+}
+
+void Simulator::run()
+{
+	while (askOwner()) 
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			environment.iteration();
+			agent.act(environment);
+			std::cout << "Current temp: " << environment.getTemperature() << " C"
+				<< std::endl;
+		}
+	}
 }
 
 
