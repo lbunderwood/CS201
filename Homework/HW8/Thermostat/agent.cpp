@@ -38,7 +38,7 @@ bool Agent::think(Environment environment)
 	}
 }
 
-void Agent::act(Environment environment)
+void Agent::act(Environment& environment)
 {
 	if (think(environment))
 	{

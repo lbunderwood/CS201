@@ -26,7 +26,7 @@ public:
 	bool think(Environment environment);
 
 	//acts on environment if neccessary
-	void act(Environment environment);
+	void act(Environment& environment);
 
 	//sets new bounds
 	void setBounds(double lower, double upper);
