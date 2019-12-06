@@ -17,7 +17,7 @@ bool Simulator::askOwner()
 	std::cout << "The current bounds are: " << agent.getBounds().first
 		<< " , " << agent.getBounds().second << std::endl
 		<< "Would you like to change the bounds?" << std::endl
-		<< "Enter Y or N (or enter E to end simulation): ";
+		<< "Enter Y or N (or E to end simulation): ";
 
 	std::string line;
 	std::getline(std::cin, line);

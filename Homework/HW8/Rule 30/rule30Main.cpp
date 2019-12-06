@@ -4,11 +4,6 @@
 // Rule 30 project
 // CS201
 
-// Adapted to use all rules using class Rule
-// 12/5/19
-// By Luke Underwood
-
-
 #include<iostream>
 #include<fstream>
 #include<vector>
@@ -19,13 +14,11 @@ int main(int argc, char** argv)
 {
 	int columns = 0;
 	int rows = 0;
-	int rule = 0;
-	if (argc != 4)
+	if (argc != 3)
 	{
 		std::cout << "Bad arguments. Using default.\n";
 		columns = 40;
 		rows = 20;
-		rule = 30;
 	}
 	else
 	{
@@ -34,18 +27,13 @@ int main(int argc, char** argv)
 			columns *= 10;
 			columns += argv[1][i] - 48;
 		}
-		
+		std::cout << columns << std::endl;
 		for (size_t i = 0; i < strlen(argv[2]); i++)
 		{
 			rows *= 10;
 			rows += argv[2][i] - 48;
 		}
-
-		for (size_t i = 0; i < strlen(argv[3]); i++)
-		{
-			rule *= 10;
-			rule += argv[3][i] - 48;
-		}
+		std::cout << rows;
 	}
 
 	std::vector<int> row(columns);
