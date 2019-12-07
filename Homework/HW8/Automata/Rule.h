@@ -12,8 +12,7 @@
 class Rule
 {
 public:
-	//Constructors
-	Rule();
+	//Constructor
 	Rule(int columns, int rows, int ruleNum);
 
 	//creates array of automata

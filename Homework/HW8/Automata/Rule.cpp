@@ -9,8 +9,6 @@
 #include<fstream>
 #include<iostream>
 
-Rule::Rule() : columns_(40), rows_(20), ruleNum_(30) {}
-
 Rule::Rule(int columns, int rows, int ruleNum) : 
 	columns_(columns), rows_(rows), ruleNum_(ruleNum) {}
 
