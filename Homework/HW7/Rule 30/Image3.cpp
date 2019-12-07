@@ -44,7 +44,7 @@ bool Image3::savePPM(const std::string& path) const {
 	return false;
 }
 
-bool Image3::loadPPM(const std::string& path) {
+bool Image3::loadArray(const std::string& path) {
 	// TODO: Load an image from the disk
 	// REQUIREMENT: Use the STREAM operators for the file contents
 	std::ifstream fin(path);

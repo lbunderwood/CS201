@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{E2D6F9EB-6A77-4220-84FD-0A7ADF2D3FB6}</ProjectGuid>
-    <RootNamespace>Rule30</RootNamespace>
+    <ProjectGuid>{7FBCED69-FC17-4BC7-89CB-44CBF1E5C724}</ProjectGuid>
+    <RootNamespace>Automata</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,9 +123,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="automata.cpp" />
     <ClCompile Include="Image3.cpp" />
     <ClCompile Include="Rule.cpp" />
-    <ClCompile Include="rule30Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Image3.hpp" />

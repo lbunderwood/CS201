@@ -23,7 +23,7 @@ public:
 	void setPixel(unsigned x, unsigned y, const Color3& color);
 
 	bool savePPM(const std::string& path) const;
-	bool loadPPM(const std::string& path);
+	bool loadArray(const std::string& path);
 
 	void printASCII(std::ostream& ostr) const;
 

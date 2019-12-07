@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="rule30Main.cpp">
+    <ClCompile Include="automata.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Image3.cpp">

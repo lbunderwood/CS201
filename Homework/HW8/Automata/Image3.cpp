@@ -39,6 +39,10 @@ bool Image3::savePPM(const std::string& path) const {
 	if (fout)
 	{
 		fout << *this;
+
+		//print confirmation that this step was completed
+		std::cout << "PPM created" << std::endl;
+
 		return true;
 	}
 	return false;
@@ -51,6 +55,10 @@ bool Image3::loadPPM(const std::string& path) {
 	if (fin && !fin.eof())
 	{
 		fin >> *this;
+
+		//print confirmation that this step was completed
+		std::cout << "Text file loaded" << std::endl;
+
 		return true;
 	}
 	return false;
