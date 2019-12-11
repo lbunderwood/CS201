@@ -57,8 +57,12 @@ bool Image3::savePPM(const std::string& path) const {
 	if (fout)
 	{
 		fout << *this;
+		return true;
 	}
-	return false;
+	else
+	{
+		return false;
+	}
 }
 
 bool Image3::loadPPM(const std::string& path) {
