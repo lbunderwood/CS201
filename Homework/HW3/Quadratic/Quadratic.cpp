@@ -8,14 +8,19 @@ Takes a,b,c and outputs roots of the quadratic equation
 #include<iostream>
 #include<string>
 #include<cmath>
+#include<sstream>
 
 //Prints a prompt, then returns the input
-float collectInput(std::string message)
+bool collectInput(std::string message, float x)
 {
-	float i;
 	std::cout << message;
-	std::cin >> i;
-	return i;
+	std::string line;
+	std::getline(std::cin, line);
+	std::istringstream instream(line);
+	instream >> x;
+
+	if (instream) return true;
+	else return false;
 }
 
 int main()
@@ -25,9 +30,12 @@ int main()
 	float rootplus = 0;
 
 	//collect input
-	float a = collectInput("Please enter the coefficient of x^2: ");
-	float b = collectInput("Please enter the coefficient of x: ");
-	float c = collectInput("Please enter the constant: ");
+	float a = 0;
+	collectInput("Please enter the coefficient of x^2: ", a);
+	float b = 0;
+	collectInput("Please enter the coefficient of x: ", b);
+	float c = 0;
+	collectInput("Please enter the constant: ", c);
 
 	//having the contents of the square root predefined is just useful
 	float radical = pow(b, 2) - 4 * a * c;
